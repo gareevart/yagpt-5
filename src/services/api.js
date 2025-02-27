@@ -1,26 +1,22 @@
 // src/services/api.js
 import axios from 'axios';
 
-const API_URL = 'https://llm.api.cloud.yandex.net/foundationModels/v1/completion';
+const API_URL = '/api/yandex';
 
 export const sendMessageToYandexGPT = async (apiKey, data) => {
   try {
     const response = await axios.post(API_URL, {
-      modelUri: 'gpt://b1gb5lrqp1jr1tmamu2t/yandexgpt-lite',
+      modelUri: 'gpt://b1gb5lrqp1jr1tmamu2t/yandexgpt/rc',
       completionOptions: {
         stream: false,
         temperature: 0.6,
         maxTokens: 2000,
       },
-      messages: data.messages.map(msg => ({
-        role: msg.role,
-        text: msg.text
-      }))
+      messages: data.messages
     }, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Api-Key ${apiKey}`,
-        'x-folder-id': 'b1gb5lrqp1jr1tmamu2t'
       }
     });
     
@@ -34,7 +30,7 @@ export const sendMessageToYandexGPT = async (apiKey, data) => {
 export const generateChatTitle = async (apiKey, userMessage, assistantResponse) => {
   try {
     const response = await axios.post(API_URL, {
-      modelUri: 'gpt://b1gb5lrqp1jr1tmamu2t/yandexgpt-lite',
+      modelUri: 'gpt://b1gb5lrqp1jr1tmamu2t/yandexgpt',
       completionOptions: {
         stream: false,
         temperature: 0.7,
@@ -54,7 +50,6 @@ export const generateChatTitle = async (apiKey, userMessage, assistantResponse) 
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Api-Key ${apiKey}`,
-        'x-folder-id': 'b1gb5lrqp1jr1tmamu2t'
       }
     });
     
