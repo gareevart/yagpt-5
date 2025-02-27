@@ -1,0 +1,123 @@
+.profile-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  background-color: #f5f7f9;
+  overflow-y: auto;
+}
+
+.profile-box {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.profile-box h2 {
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  text-align: center;
+}
+
+.profile-info {
+  margin-bottom: 2rem;
+}
+
+.info-group {
+  margin-bottom: 1.5rem;
+}
+
+.info-group label {
+  display: block;
+  color: #4b5563;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-group span {
+  display: inline-block;
+  padding: 0.5rem 0;
+  color: #1f2937;
+}
+
+.info-group form {
+  margin-top: 0.5rem;
+}
+
+.info-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.info-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.profile-box button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background-color: #2563eb;
+  color: white;
+}
+
+.profile-box button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.profile-box button.secondary {
+  background-color: #e5e7eb;
+  color: #4b5563;
+}
+
+.profile-box button.secondary:hover {
+  background-color: #d1d5db;
+}
+
+.profile-box .sign-out {
+  width: 100%;
+  background-color: #ef4444;
+  color: white;
+  margin-top: 1rem;
+}
+
+.profile-box .sign-out:hover {
+  background-color: #dc2626;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.success-message {
+  background-color: #dcfce7;
+  color: #16a34a;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+} 
